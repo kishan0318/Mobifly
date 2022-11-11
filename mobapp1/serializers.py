@@ -22,9 +22,9 @@ class SignupSer(Serializer):
     def create(self,validated_data):
         username=validated_data.get('username')
         password=validated_data.get('password')
-        fist_name=validated_data.get('fist_name')
+        first_name=validated_data.get('first_name')
         last_name=validated_data.get('last_name')
-        qs=User.objects.create_user(username=username,last_name=last_name,fist_name=fist_name)
+        qs=User.objects.create_user(username=username,last_name=last_name,first_name=first_name)
         qs.set_password(password)
         qs.save()
         return validated_data
